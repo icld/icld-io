@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-// import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.css';
 
 // import Header from '../src/Components/Header';
 
@@ -24,6 +24,7 @@ export default function Home() {
           layout='fill'
           objectFit='cover'
           objectPosition='center'
+          className={styles.img}
         />
         <h1>Welcome to icld.io</h1>
 

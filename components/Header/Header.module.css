@@ -1,0 +1,30 @@
+.link {
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 18px;
+  text-transform: 'capitalize';
+}
+
+.icld {
+  color: tomato;
+}
+
+.header {
+  height: 60px;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.75);
+
+  border-color: rgba(255, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  z-index: 1;
+}
