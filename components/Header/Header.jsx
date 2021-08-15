@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import router, { useRouter } from 'next/router';
 
@@ -13,11 +13,21 @@ const navItems = [
 
 const Header = (props) => {
   const router = useRouter();
-  const [activeMenu, setActiveMenu] = useState(true);
+  const [activeMenu, setActiveMenu] = useState(false);
+  const [displayNav, setDisplayNav] = useState(false);
 
   const closeHandle = (e) => {
     activeMenu ? setActiveMenu(false) : setActiveMenu(true);
   };
+
+  //remove dropdown menu when window is larger size
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        setActiveMenu(false);
+      }
+    });
+  });
 
   return (
     <>
@@ -35,13 +45,28 @@ const Header = (props) => {
           >
             <Link href='/'>
               <a
-                className={`${styles.link} ${styles.icld}
-              ${router.pathname === '/' ? styles.active : styles.icld}`}
+                className={` ${styles.icld}
+              ${router.pathname === '/' ? styles.activeIcld : styles.icld}`}
               >
                 ICLD
               </a>
             </Link>
-
+            <div className={styles.barNav}>
+              {navItems.map((item, i) => (
+                <Link href={item.toHref}>
+                  <a
+                    className={`${styles.barLink}
+              ${
+                router.pathname === item.toHref
+                  ? styles.activeBarLink
+                  : styles.barLink
+              }`}
+                  >
+                    {item.name}
+                  </a>
+                </Link>
+              ))}
+            </div>
             <span className={styles.closeBtn} onClick={() => closeHandle()}>
               <span
                 className={`${styles.line1} ${activeMenu ? styles.active : ''}`}
@@ -66,6 +91,7 @@ const Header = (props) => {
                 <a
                   className={`${styles.link}
               ${router.pathname === item.toHref ? styles.active : styles.link}`}
+                  onClick={() => setActiveMenu(!activeMenu)}
                 >
                   {item.name}
                 </a>

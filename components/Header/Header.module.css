@@ -20,7 +20,47 @@
   color: rgb(209, 144, 255);
 }
 
+.barNav {
+  display: none;
+}
+
+.barLink {
+  color: white;
+  font-weight: 200;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  /* text-shadow: 1px 1px 1px brown; */
+  text-decoration: none;
+  /* padding-top: 4px;
+  padding-bottom: 4px; */
+  margin-right: 16px;
+  cursor: pointer;
+  font-size: 22px;
+  text-transform: 'capitalize';
+  z-index: 999;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  background: radial-gradient(
+    closest-side,
+    rgba(0, 0, 0, 0.988),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
 .icld {
+  padding: 2px;
+  background: radial-gradient(
+    closest-side,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.3)
+  );
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 26px;
+  color: rgb(213, 54, 213);
+}
+.icld.activeIcld {
   font-weight: 400;
   font-size: 26;
   color: rgb(213, 54, 213);
@@ -155,4 +195,14 @@
 
 .link:hover::after {
   width: 100px;
+}
+
+@media (min-width: 768px) {
+  .closeBtn {
+    display: none;
+  }
+
+  .barNav {
+    display: flex;
+  }
 }

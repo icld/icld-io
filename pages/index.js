@@ -12,11 +12,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.container}>
-        <h1>Welcome to icld.io</h1>
+        <card className={styles.mainCard}>
+          <h1>Welcome to icld.io</h1>
 
-        <p>Hello! I am a Portland, Oregon based freelancer.</p>
-
-        <div></div>
+          <p>Hello! I am a Portland, Oregon based freelancer.</p>
+        </card>
       </main>
     </>
   );
