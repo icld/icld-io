@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import router, { useRouter } from 'next/router';
 
@@ -12,44 +13,68 @@ const navItems = [
 
 const Header = (props) => {
   const router = useRouter();
-  // useEffect(() => {
-  //   const
-  //     return () => {
-  //         cleanup
-  //     }
-  // }, [input])
+  const [activeMenu, setActiveMenu] = useState(true);
+
+  const closeHandle = (e) => {
+    activeMenu ? setActiveMenu(false) : setActiveMenu(true);
+  };
 
   return (
-    <header className={styles.header}>
-      <nav className={styles.nav}>
-        <Link href='/'>
-          {router.pathname === '/' ? (
-            <a className={(styles.link, styles.icld)}>ICLD</a>
-          ) : (
-            <a sx={{ variant: 'links.icldNav' }}>ICLD</a>
-          )}
-        </Link>
-        <div sx={{ display: 'flex' }}>
-          {navItems.map((item, i) => (
-            // eslint-disable-next-line react/jsx-key
-            <Link href={item.toHref}>
-              {router.pathname === item.toHref ? (
-                <a className={(styles.activeLink, styles.link)}>{item.name} </a>
-              ) : (
-                <a className={(styles.activeLink, styles.link)}>{item.name} </a>
-              )}
-            </Link>
-          ))}
-          {/* <Button
-            onClick={(e) => {
-              setColorMode(colorMode === 'light' ? 'dark' : 'light');
+    <>
+      <header
+        className={` ${styles.header} ${activeMenu ? styles.activeMenu : ''} `}
+      >
+        <nav className={styles.nav}>
+          <div
+            style={{
+              display: 'flex',
+              paddingTop: '10px',
+              justifyContent: 'space-between',
+              alignItems: 'center',
             }}
           >
-            Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-          </Button> */}
-        </div>
-      </nav>
-    </header>
+            <Link href='/'>
+              <a
+                className={`${styles.link} ${styles.icld}
+              ${router.pathname === '/' ? styles.active : styles.icld}`}
+              >
+                ICLD
+              </a>
+            </Link>
+
+            <span className={styles.closeBtn} onClick={() => closeHandle()}>
+              <span
+                className={`${styles.line1} ${activeMenu ? styles.active : ''}`}
+              ></span>
+              <span
+                className={`${styles.line2} ${activeMenu ? styles.active : ''}`}
+              ></span>
+              <span
+                className={`${styles.line3} ${activeMenu ? styles.active : ''}`}
+              ></span>
+            </span>
+          </div>
+        </nav>
+        <ul
+          className={`${styles.menuList}  ${
+            activeMenu ? styles.activeMenuList : ''
+          }`}
+        >
+          {navItems.map((item, i) => (
+            <li>
+              <Link href={item.toHref}>
+                <a
+                  className={`${styles.link}
+              ${router.pathname === item.toHref ? styles.active : styles.link}`}
+                >
+                  {item.name}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </header>
+    </>
   );
 };
 

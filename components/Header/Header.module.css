@@ -1,30 +1,158 @@
 .link {
   color: white;
+  font-weight: 200;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  /* text-shadow: 1px 1px 1px brown; */
   text-decoration: none;
-  padding: 14px 16px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   cursor: pointer;
-  z-index: 1;
-  font-size: 18px;
+  font-size: 22px;
   text-transform: 'capitalize';
+  z-index: 999;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: rgb(209, 144, 255);
 }
 
 .icld {
-  color: tomato;
+  font-weight: 400;
+  font-size: 26;
+  color: rgb(213, 54, 213);
+}
+
+.active {
+  color: rgb(249, 144, 255);
 }
 
 .header {
+  top: 0;
+  left: 0;
+  position: fixed;
   height: 60px;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.75);
+  border-color: rgba(255, 0, 0, 0.2);
+  z-index: 3;
+  background-image: radial-gradient(
+    center,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0)
+  );
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
 
-  border-color: rgba(255, 0, 0, 0.15);
-  z-index: 1;
+.header.activeMenu {
+  height: 200px;
 }
 
 .nav {
-  display: flex;
-  align-items: center;
+  width: 90%;
+  max-width: 960px;
+  /* display: flex; */
+  /* align-items: center; */
   justify-content: space-between;
-  height: 100%;
-  z-index: 1;
+  /* height: 100%; */
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.menuList {
+  width: 90%;
+  max-width: 960px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  margin-top: 100px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.activeMenuList {
+  opacity: 1;
+  margin-top: 0;
+}
+
+.line1 {
+  margin-bottom: 6px;
+}
+
+.line2 {
+}
+
+.line3 {
+  margin-top: 6px;
+}
+
+.line1,
+.line2,
+.line3 {
+  background-color: #fff;
+  width: 75px;
+  height: 1px;
+  display: block;
+  position: relative;
+  opacity: 1;
+  border-radius: 15%;
+  transition: all 0.3s;
+}
+
+.line1.active {
+  transform: rotate(270deg);
+  opacity: 0;
+  background-color: rgb(249, 144, 255);
+  height: 5px;
+  top: 5px;
+  width: 25px;
+}
+
+.line2.active {
+  transform: rotate(45deg);
+  background-color: rgb(249, 144, 255);
+  height: 2px;
+  width: 25px;
+}
+
+.line3.active {
+  transform: rotate(-45deg);
+  background-color: rgb(249, 144, 255);
+  height: 2px;
+  top: -7px;
+  width: 25px;
+}
+
+.closeBtn {
+  align-items: center;
+  /* padding: 16px; */
+  float: right;
+  /* height: 100%; */
+  /* width: 25px; */
+  /* position: absolute; */
+  text-decoration: none;
+  /* top: 10px; */
+  /* left: 25px; */
+  font-size: 36px !important;
+  /* margin-right: 50px; */
+  z-index: 100;
+  color: #fff;
+  cursor: pointer;
+  transition: background-position 0.3s;
+}
+
+.link:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.2s;
+}
+
+.link:hover::after {
+  width: 100px;
 }
