@@ -4,18 +4,10 @@ import router, { useRouter } from 'next/router';
 
 import styles from './Header.module.css';
 
-const navItems = [
-  { name: 'projects', toHref: '/projects' },
-  { name: 'about', toHref: '/about' },
-  { name: 'lx', toHref: 'https://www.icldesign.com' },
-  { name: 'contact', toHref: '/contact' },
-  { name: 'blog', toHref: '/blog' },
-];
-
 const Header = (props) => {
   const router = useRouter();
   const [activeMenu, setActiveMenu] = useState(false);
-  const [displayNav, setDisplayNav] = useState(false);
+  const [chngCol, setChngCol] = useState(false);
 
   const closeHandle = (e) => {
     activeMenu ? setActiveMenu(false) : setActiveMenu(true);
@@ -29,6 +21,10 @@ const Header = (props) => {
       }
     });
   });
+
+  const changeColor = () => {
+    setChngCol(!chngCol);
+  };
 
   return (
     <>
@@ -49,7 +45,18 @@ const Header = (props) => {
                 className={` ${styles.icld}
               ${router.pathname === '/' ? styles.activeIcld : styles.icld}`}
               >
-                ICLD
+                {spanItems.map((item, i) => {
+                  const name = item.cName;
+                  const altC = item.altCName;
+                  return (
+                    <span
+                      className={chngCol ? altC : name}
+                      onMouseEnter={() => changeColor()}
+                    >
+                      {item.letter}
+                    </span>
+                  );
+                })}
               </a>
             </Link>
             <div className={styles.barNav}>
@@ -121,3 +128,18 @@ const Header = (props) => {
 };
 
 export default Header;
+
+const navItems = [
+  { name: 'projects', toHref: '/projects' },
+  { name: 'about', toHref: '/about' },
+  { name: 'lx', toHref: 'https://www.icldesign.com' },
+  { name: 'contact', toHref: '/contact' },
+  { name: 'blog', toHref: '/blog' },
+];
+
+const spanItems = [
+  { cName: styles.spanI, altCName: styles.spanIChng, letter: 'I' },
+  { cName: styles.spanC, altCName: styles.spanCChng, letter: 'C' },
+  { cName: styles.spanL, altCName: styles.spanLChng, letter: 'L' },
+  { cName: styles.spanD, altCName: styles.spanDChng, letter: 'D' },
+];

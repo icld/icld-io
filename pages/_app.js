@@ -44,7 +44,6 @@ function MyApp({ Component, pageProps }) {
           quality={50}
           priority={true}
           // loading='eager'
-
           layout='fill'
           objectFit='cover'
           objectPosition='center'
