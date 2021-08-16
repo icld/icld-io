@@ -11,7 +11,7 @@
   cursor: pointer;
   font-size: 22px;
   text-transform: 'capitalize';
-  z-index: 999;
+  z-index: 2;
   border-radius: 30px;
   transition: all 0.3s ease-in-out;
 }
@@ -38,7 +38,7 @@
   cursor: pointer;
   font-size: 22px;
   text-transform: 'capitalize';
-  z-index: 999;
+  z-index: 2;
   border-radius: 30px;
   transition: all 0.3s ease-in-out;
   background: radial-gradient(
@@ -46,6 +46,10 @@
     rgba(0, 0, 0, 0.988),
     rgba(0, 0, 0, 0.2)
   );
+}
+
+.barLink:hover {
+  color: rgb(209, 144, 255);
 }
 
 .icld {
@@ -59,6 +63,10 @@
   font-weight: 400;
   font-size: 26px;
   color: rgb(213, 54, 213);
+}
+
+.icld:hover {
+  color: rgb(209, 144, 255);
 }
 
 .icld:after {
@@ -80,6 +88,10 @@
   color: rgb(213, 54, 213);
 }
 
+.icld.activeIcld:hover {
+  color: rgb(209, 144, 255);
+}
+
 .active {
   color: rgb(249, 144, 255);
 }
@@ -90,7 +102,6 @@
   position: fixed;
   height: 60px;
   width: 100vw;
-  border-color: rgba(255, 0, 0, 0.2);
   z-index: 3;
   background-image: radial-gradient(
     center,
@@ -192,7 +203,7 @@
   /* left: 25px; */
   font-size: 36px !important;
   /* margin-right: 50px; */
-  z-index: 100;
+  z-index: 3;
   color: #fff;
   cursor: pointer;
   transition: background-position 0.3s;

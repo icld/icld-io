@@ -3,35 +3,56 @@ import styles from '../styles/Home.module.css';
 import Header from '../components/Header/Header';
 import Image from 'next/image';
 import pic from '../public/images/_DSF5585.JPG';
+import { Flex } from 'theme-ui';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div
-      style={{
-        height: '99.5vh',
-        width: '99.5vw',
-        margin: '2px auto',
-        position: 'relative',
-      }}
-    >
-      <Header />
-
-      <Image
-        style={{ position: 'relative' }}
-        src={pic}
-        blurDataURL='/images/_DSF5585.JPG'
-        alt='streets'
-        quality={50}
-        priority={true}
-        // loading='eager'
-
-        layout='fill'
-        objectFit='cover'
-        objectPosition='center'
-        className={styles.img}
+    <div>
+      <div
+        style={{
+          position: 'absolute',
+          background: 'black',
+          height: '99%',
+          width: '99%',
+          left: '.5%',
+          right: 'auto',
+          top: '.5%',
+          bottom: 'auto',
+          marginRight: '-50%',
+          zIndex: -2,
+          borderRadius: '10px',
+        }}
       />
 
-      <Component {...pageProps} />
+      <div
+        style={{
+          height: '99%',
+          width: '99%',
+          left: '.5%',
+          right: 'auto',
+          top: '.5%',
+          bottom: 'auto',
+          position: 'absolute',
+        }}
+      >
+        <Header />
+
+        <Image
+          src={pic}
+          blurDataURL='/images/_DSF5585.JPG'
+          alt='streets'
+          quality={50}
+          priority={true}
+          // loading='eager'
+
+          layout='fill'
+          objectFit='cover'
+          objectPosition='center'
+          className={styles.img}
+        />
+
+        <Component {...pageProps} />
+      </div>
     </div>
   );
 }

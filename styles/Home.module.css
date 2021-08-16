@@ -18,7 +18,7 @@
   margin: 0 auto;
   color: black;
   height: 100vh;
-  z-index: 999;
+  z-index: 2;
   /* padding: 5rem 0; */
   /* flex: 1;
   display: flex;
@@ -139,6 +139,8 @@
 }
 
 .mainCard {
+  z-index: 2;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -151,4 +153,31 @@
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0.01)
   );
+}
+
+.Modal {
+  cursor: initial;
+  position: absolute;
+  background-color: rgb(248, 255, 240);
+  width: 75%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: all 1s ease-in-out;
+}
+
+.Overlay {
+  cursor: pointer;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.502);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
 }
