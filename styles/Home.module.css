@@ -133,7 +133,9 @@
 .img {
   position: relative;
   z-index: -1;
-  margin: 6px;
+  padding: 6px;
+  border: 10px white;
+  border-radius: 6px;
 }
 
 .mainCard {
@@ -146,7 +148,7 @@
   height: 75%;
   background: radial-gradient(
     closest-side,
-    rgba(0, 0, 0, 0.988),
-    rgba(0, 0, 0, 0)
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.01)
   );
 }

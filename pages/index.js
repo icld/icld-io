@@ -15,7 +15,10 @@ export default function Home() {
         <card className={styles.mainCard}>
           <h1>Welcome to icld.io</h1>
 
-          <p>Hello! I am a Portland, Oregon based freelancer.</p>
+          <p>
+            Hi! I am a Portland, Oregon based freelance programmer with a
+            background in design and project management.
+          </p>
         </card>
       </main>
     </>

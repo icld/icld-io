@@ -7,8 +7,9 @@ import styles from './Header.module.css';
 const navItems = [
   { name: 'projects', toHref: '/projects' },
   { name: 'about', toHref: '/about' },
-  { name: 'blog', toHref: '/blog' },
+  { name: 'lx', toHref: 'https://www.icldesign.com' },
   { name: 'contact', toHref: '/contact' },
+  { name: 'blog', toHref: '/blog' },
 ];
 
 const Header = (props) => {
@@ -52,9 +53,11 @@ const Header = (props) => {
               </a>
             </Link>
             <div className={styles.barNav}>
-              {navItems.map((item, i) => (
-                <Link href={item.toHref}>
+              {navItems.map((item, i) =>
+                item.name === 'lx' ? (
                   <a
+                    target='_blank'
+                    href={item.toHref}
                     className={`${styles.barLink}
               ${
                 router.pathname === item.toHref
@@ -64,8 +67,21 @@ const Header = (props) => {
                   >
                     {item.name}
                   </a>
-                </Link>
-              ))}
+                ) : (
+                  <Link href={item.toHref}>
+                    <a
+                      className={`${styles.barLink}
+              ${
+                router.pathname === item.toHref
+                  ? styles.activeBarLink
+                  : styles.barLink
+              }`}
+                    >
+                      {item.name}
+                    </a>
+                  </Link>
+                )
+              )}
             </div>
             <span className={styles.closeBtn} onClick={() => closeHandle()}>
               <span

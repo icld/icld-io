@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
       style={{
         height: '99.5vh',
         width: '99.5vw',
-        margin: '2px',
+        margin: '2px auto',
         position: 'relative',
       }}
     >
