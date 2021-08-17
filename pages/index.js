@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>ICLD.io</title>
+        <title>icld.io</title>
         <meta name='description' content='icld' />
         <link rel='icon' href='/favicon.ico' />
       </Head>

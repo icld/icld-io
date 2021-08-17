@@ -1,5 +1,5 @@
 .link {
-  color: white;
+  color: #fdecef;
   font-weight: 200;
   display: inline-block;
   position: relative;
@@ -25,7 +25,7 @@
 }
 
 .barLink {
-  color: white;
+  color: #fdecef;
   font-weight: 00;
   display: inline-block;
   position: relative;
@@ -53,10 +53,12 @@
 }
 
 .activeBarLink {
-  color: #f07167;
+  color: #f0426e;
 }
 
 .icld {
+  font-weight: 500;
+  color: #ffadc0;
   padding: 2px;
   background: radial-gradient(
     closest-side,
@@ -70,13 +72,16 @@
 }
 
 .icld.activeIcld {
-  font-weight: 400;
+  color: #f0426e;
+  font-weight: 500;
   font-size: 2rem;
   /* color: rgb(213, 54, 213); */
 }
 
-.icld:hover {
-  color: rgb(209, 144, 255);
+.icld:hover,
+.barLink:hover,
+.link:hover {
+  color: #fc7391;
 }
 
 .icld:after {
@@ -84,16 +89,12 @@
   display: block;
   width: 0;
   height: 1px;
-  background: #fff;
+  background: #ffadc0;
   transition: width 0.2s;
 }
 
 .icld:hover::after {
   width: 100%;
-}
-
-.icld.activeIcld:hover {
-  color: rgb(209, 144, 255);
 }
 
 .active {
@@ -167,9 +168,9 @@
 .line1,
 .line2,
 .line3 {
-  background-color: #fff;
+  background-color: #fdecef;
   width: 75px;
-  height: 1px;
+  height: 3px;
   display: block;
   position: relative;
   opacity: 1;
@@ -177,10 +178,16 @@
   transition: all 0.3s;
 }
 
+.closeBtn:hover > .line1,
+.closeBtn:hover > .line2,
+.closeBtn:hover > .line3 {
+  background-color: #fc7391;
+}
+
 .line1.active {
   transform: rotate(270deg);
   opacity: 0;
-  background-color: rgb(249, 144, 255);
+  background-color: #f0426e;
   height: 5px;
   top: 5px;
   width: 25px;
@@ -188,16 +195,16 @@
 
 .line2.active {
   transform: rotate(45deg);
-  background-color: rgb(249, 144, 255);
-  height: 2px;
+  background-color: #f0426e;
+  height: 5px;
   width: 25px;
 }
 
 .line3.active {
   transform: rotate(-45deg);
-  background-color: rgb(249, 144, 255);
-  height: 2px;
-  top: -7px;
+  background-color: #fc7391;
+  height: 5px;
+  top: -10px;
   width: 25px;
 }
 
@@ -214,7 +221,7 @@
   font-size: 36px !important;
   /* margin-right: 50px; */
   z-index: 3;
-  color: #fff;
+  color: #fdecef;
   cursor: pointer;
   transition: background-position 0.3s;
 }
@@ -224,7 +231,7 @@
   display: block;
   width: 0;
   height: 1px;
-  background: #fff;
+  background: #fdecef;
   transition: width 0.2s;
 }
 

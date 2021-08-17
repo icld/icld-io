@@ -45,7 +45,8 @@ const Header = (props) => {
                 className={` ${styles.icld}
               ${router.pathname === '/' ? styles.activeIcld : styles.icld}`}
               >
-                {spanItems.map((item, i) => {
+                ICLD
+                {/* {spanItems.map((item, i) => {
                   const name = item.cName;
                   const altC = item.altCName;
                   return (
@@ -57,7 +58,7 @@ const Header = (props) => {
                       {item.letter}
                     </span>
                   );
-                })}
+                })} */}
               </a>
             </Link>
             {/* upper Nav */}
