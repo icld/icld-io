@@ -45,6 +45,7 @@
 
 .title a {
   color: #0070f3;
+
   text-decoration: none;
 }
 
@@ -55,9 +56,14 @@
 }
 
 .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  color: blue;
+  text-shadow: #6d0055 1px 0px 1px;
 }
 
 .title,
@@ -140,7 +146,7 @@
 
 .mainCard {
   z-index: 2;
-  cursor: pointer;
+  /* cursor: pointer; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,8 +159,19 @@
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0.01)
   );
+  /* transition: all 1s ease-in-out; */
 }
 
+.mainCard:hover {
+  /* background-position: 100px; */
+  background-color: radial-gradient(
+    closest-side,
+    rgb(249, 157, 157),
+    rgba(249, 157, 157, 0.1)
+  );
+}
+
+/* 
 .Modal {
   cursor: initial;
   position: absolute;
@@ -180,4 +197,27 @@
   right: 0;
   bottom: 0;
   z-index: 10;
+} */
+
+.titleA {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s ease, opacity 1.5s ease;
+}
+
+.titleB {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-250%);
+  transition: transform 1s ease, opacity 1.5s ease;
+}
+
+.mainCard:hover > .title > .titleA {
+  opacity: 0;
+  transform: translateX(250%);
+}
+.mainCard:hover > .title > .titleB {
+  /* display: block; */
+  opacity: 1;
+  transform: translateX(0);
 }
