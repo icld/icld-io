@@ -102,11 +102,12 @@
 }
 
 .header {
-  top: 0;
-  left: 0;
+  /* top: 0; */
+  /* left: 0; */
   position: fixed;
   height: 60px;
-  width: 100vw;
+  width: 99vw;
+  margin: 0 auto;
   z-index: 3;
   background-image: radial-gradient(
     center,
