@@ -162,14 +162,14 @@
   transition: all 1s ease-in-out;
 }
 
-.mainCard:hover {
+/* .mainCard:hover {
   background-position: 100px;
   background-color: radial-gradient(
     closest-side,
     rgba(249, 157, 157, 0.975),
     rgba(249, 157, 157, 0.1)
   );
-}
+} */
 
 /* 
 .Modal {
