@@ -113,11 +113,17 @@
     rgba(0, 0, 0, 0)
   );
   overflow: hidden;
-  transition: height 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .header.activeMenu {
-  height: 230px;
+  height: 250px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.858);
+  background-image: radial-gradient(
+    center,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.7)
+  );
 }
 
 .nav {
