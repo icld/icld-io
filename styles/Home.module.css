@@ -63,7 +63,7 @@
   line-height: 1.15;
   font-size: 4rem;
   color: blue;
-  text-shadow: #6d0055 1px 0px 1px;
+  text-shadow: #6d0055 0.01px 0.01px 3px;
 }
 
 .title,
@@ -159,14 +159,14 @@
     rgba(0, 0, 0, 1),
     rgba(0, 0, 0, 0.01)
   );
-  /* transition: all 1s ease-in-out; */
+  transition: all 1s ease-in-out;
 }
 
 .mainCard:hover {
-  /* background-position: 100px; */
+  background-position: 100px;
   background-color: radial-gradient(
     closest-side,
-    rgb(249, 157, 157),
+    rgba(249, 157, 157, 0.975),
     rgba(249, 157, 157, 0.1)
   );
 }

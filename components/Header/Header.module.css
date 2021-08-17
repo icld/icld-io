@@ -52,6 +52,10 @@
   color: rgb(209, 144, 255);
 }
 
+.activeBarLink {
+  color: #f07167;
+}
+
 .icld {
   padding: 2px;
   background: radial-gradient(

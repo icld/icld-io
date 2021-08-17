@@ -59,6 +59,7 @@ const Header = (props) => {
                 })}
               </a>
             </Link>
+            {/* upper Nav */}
             <div className={styles.barNav}>
               {navItems.map((item, i) =>
                 item.name === 'lx' ? (
