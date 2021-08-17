@@ -1,4 +1,3 @@
-import { style } from 'styled-system';
 import Instagram from './Instagram';
 import Twitter from './Twitter';
 import GitHub from './GitHub';
