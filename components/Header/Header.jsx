@@ -50,6 +50,7 @@ const Header = (props) => {
                   const altC = item.altCName;
                   return (
                     <span
+                      key={i}
                       className={chngCol ? altC : name}
                       onMouseEnter={() => changeColor()}
                     >
@@ -65,6 +66,7 @@ const Header = (props) => {
                 item.name === 'lx' ? (
                   <a
                     target='_blank'
+                    rel='noreferrer'
                     href={item.toHref}
                     className={`${styles.barLink}
               ${
@@ -110,7 +112,7 @@ const Header = (props) => {
           }`}
         >
           {navItems.map((item, i) => (
-            <li>
+            <li key={i}>
               <Link href={item.toHref}>
                 <a
                   className={`${styles.link}
