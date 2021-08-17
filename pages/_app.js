@@ -6,7 +6,7 @@ import pic from '../public/images/_DSF5585.JPG';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div style={{}}>
+    <div style={{ overflow: 'hidden' }}>
       <div
         style={{
           position: 'absolute',
