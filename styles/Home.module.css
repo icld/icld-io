@@ -200,6 +200,7 @@
 } */
 
 .titleA {
+  display: block;
   opacity: 1;
   transform: translateX(0);
   transition: transform 1s ease, opacity 1.5s ease;
@@ -220,4 +221,23 @@
   /* display: block; */
   opacity: 1;
   transform: translateX(0);
+}
+
+.titleName {
+  /* margin-left: 22px; */
+  /* display: block; */
+  color: #f08400;
+  animation: glow 5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 8px #eb2b00, 0 0 20px #e45b12, 0 0 30px #eb8e1b,
+      0 0 40px #5e60ce, 0 0 50px #5e60ce, 0 0 60px #5e60ce, 0 0 70px #5e60ce;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #6930c3, 0 0 40px #6930c3,
+      0 0 50px #6930c3, 0 0 60px #6930c3, 0 0 70px #6930c3, 0 0 80px #6930c3;
+  }
 }

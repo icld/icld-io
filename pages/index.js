@@ -24,7 +24,9 @@ export default function Home() {
           //  onClick={() => setModalIsOpen(true)}
         >
           <h1 className={styles.title}>
-            <span className={styles.titleA}>Welcome to icld.io</span>
+            <span className={styles.titleA}>
+              Welcome to <span className={styles.titleName}>icld.io</span>
+            </span>
             <span className={styles.titleB}>
               <Link href='/about'>
                 <a>Click to learn more</a>
