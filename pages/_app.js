@@ -3,7 +3,6 @@ import styles from '../styles/Home.module.css';
 import Header from '../components/Header/Header';
 import Image from 'next/image';
 import pic from '../public/images/_DSF5585.JPG';
-import { Flex } from 'theme-ui';
 
 function MyApp({ Component, pageProps }) {
   return (
