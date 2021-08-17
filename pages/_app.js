@@ -42,7 +42,7 @@ function MyApp({ Component, pageProps }) {
           alt='streets'
           quality={50}
           priority={true}
-          // loading='eager'
+          loading='eager'
           layout='fill'
           objectFit='cover'
           objectPosition='center'
