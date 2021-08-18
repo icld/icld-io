@@ -43,7 +43,7 @@ export default function Home() {
 
           <p className={styles.description}>
             I am a Portland-based freelance coder with a background in design
-            and project management. I'm excited to work with you on your next
+            and project management. I am excited to work with you on your next
             extraordinary project.
             <Link href='/contact'>
               <a> What would you like to build?</a>
