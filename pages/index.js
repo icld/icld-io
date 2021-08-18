@@ -45,7 +45,8 @@ export default function Home() {
             I am a Portland-based freelance coder with a background in design
             and project management. I am excited to work with you on your next
             extraordinary project.
-            <Link href='/contact'>
+            <br />
+            <Link href='/contact' style={{ position: 'inline-block' }}>
               <a> What would you like to build?</a>
             </Link>
           </p>
