@@ -20,10 +20,11 @@ export default function () {
       // noValidate
       // validated={canSubmit}
       // onSubmit={handleSubmit}
+      netlify
       method='post'
       data-netlify='true'
       name='contact'
-      action='/success'
+      action='/pages/success'
       role='form'
     >
       <Form.Group>
