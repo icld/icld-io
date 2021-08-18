@@ -1,6 +1,6 @@
 .link {
-  color: white;
-  font-weight: 200;
+  color: #fdecef;
+  font-weight: 500;
   display: inline-block;
   position: relative;
   text-align: center;
@@ -9,7 +9,7 @@
   padding-top: 4px;
   padding-bottom: 4px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 1.4rem;
   text-transform: 'capitalize';
   z-index: 2;
   border-radius: 30px;
@@ -25,8 +25,11 @@
 }
 
 .barLink {
-  color: white;
-  font-weight: 00;
+  color: #fdecef;
+  font-weight: 500;
+  text-shadow: 1px 1px 5px black;
+  -webkit-text-stroke: 0.1px;
+  -webkit-text-stroke-color: #ffadc0;
   display: inline-block;
   position: relative;
   text-align: center;
@@ -34,18 +37,13 @@
   text-decoration: none;
   /* padding-top: 4px;
   padding-bottom: 4px; */
-  margin-right: 16px;
+  margin-right: 20px;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   text-transform: 'capitalize';
   z-index: 2;
   border-radius: 30px;
   transition: all 0.3s ease-in-out;
-  background: radial-gradient(
-    closest-side,
-    rgba(0, 0, 0, 0.988),
-    rgba(0, 0, 0, 0.2)
-  );
 }
 
 .barLink:hover {
@@ -53,30 +51,33 @@
 }
 
 .activeBarLink {
-  color: #f07167;
+  color: #f0426e;
 }
 
 .icld {
+  color: #ffadc0;
   padding: 2px;
-  background: radial-gradient(
-    closest-side,
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0.3)
-  );
+
+  text-shadow: 1px 1px 10px black;
+  -webkit-text-stroke: 0.1px;
+  -webkit-text-stroke-color: #ffadc0;
   border-radius: 10px;
-  font-weight: 400;
   font-size: 2rem;
+  font-weight: 500;
   /* color: rgb(213, 54, 213); */
 }
 
 .icld.activeIcld {
-  font-weight: 400;
+  color: #f0426e;
+  font-weight: 500;
   font-size: 2rem;
   /* color: rgb(213, 54, 213); */
 }
 
-.icld:hover {
-  color: rgb(209, 144, 255);
+.icld:hover,
+.barLink:hover,
+.link:hover {
+  color: #fc7391;
 }
 
 .icld:after {
@@ -84,7 +85,7 @@
   display: block;
   width: 0;
   height: 1px;
-  background: #fff;
+  background: #ffadc0;
   transition: width 0.2s;
 }
 
@@ -92,20 +93,17 @@
   width: 100%;
 }
 
-.icld.activeIcld:hover {
-  color: rgb(209, 144, 255);
-}
-
 .active {
   color: rgb(249, 144, 255);
 }
 
 .header {
-  top: 0;
-  left: 0;
+  /* top: 0; */
+  /* left: 0; */
   position: fixed;
   height: 60px;
-  width: 100vw;
+  width: 99vw;
+  margin: 0 auto;
   z-index: 3;
   background-image: radial-gradient(
     center,
@@ -167,9 +165,9 @@
 .line1,
 .line2,
 .line3 {
-  background-color: #fff;
+  background-color: #fdecef;
   width: 75px;
-  height: 1px;
+  height: 3px;
   display: block;
   position: relative;
   opacity: 1;
@@ -177,10 +175,16 @@
   transition: all 0.3s;
 }
 
+.closeBtn:hover > .line1,
+.closeBtn:hover > .line2,
+.closeBtn:hover > .line3 {
+  background-color: #fc7391;
+}
+
 .line1.active {
   transform: rotate(270deg);
   opacity: 0;
-  background-color: rgb(249, 144, 255);
+  background-color: #f0426e;
   height: 5px;
   top: 5px;
   width: 25px;
@@ -188,16 +192,16 @@
 
 .line2.active {
   transform: rotate(45deg);
-  background-color: rgb(249, 144, 255);
-  height: 2px;
+  background-color: #f0426e;
+  height: 5px;
   width: 25px;
 }
 
 .line3.active {
   transform: rotate(-45deg);
-  background-color: rgb(249, 144, 255);
-  height: 2px;
-  top: -7px;
+  background-color: #fc7391;
+  height: 5px;
+  top: -10px;
   width: 25px;
 }
 
@@ -214,7 +218,7 @@
   font-size: 36px !important;
   /* margin-right: 50px; */
   z-index: 3;
-  color: #fff;
+  color: #fdecef;
   cursor: pointer;
   transition: background-position 0.3s;
 }
@@ -224,7 +228,7 @@
   display: block;
   width: 0;
   height: 1px;
-  background: #fff;
+  background: #fdecef;
   transition: width 0.2s;
 }
 

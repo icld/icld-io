@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>ICLD.io</title>
+        <title>icld.io</title>
         <meta name='description' content='icld' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
@@ -25,18 +25,29 @@ export default function Home() {
         >
           <h1 className={styles.title}>
             <span className={styles.titleA}>
+              Hello. My name is{' '}
+              <div style={{ display: 'inline-block', color: '#f0426e' }}>
+                {' '}
+                Ian Lyles
+              </div>
+              . <br />I am a web developer.
+              <br />
               Welcome to <span className={styles.titleName}>icld.io</span>
             </span>
             <span className={styles.titleB}>
-              <Link href='/about'>
-                <a>Click to learn more</a>
+              <Link href='/projects'>
+                <a>View some of my work</a>
               </Link>
             </span>
           </h1>
 
           <p className={styles.description}>
-            Hi! I am a Portland, Oregon based freelance programmer with a
-            background in design and project management.
+            I am a Portland-based freelance coder with a background in design
+            and project management. I am excited to work with you on your next
+            extraordinary project.
+            <Link href='/contact'>
+              <a> What would you like to build?</a>
+            </Link>
           </p>
         </card>
       </main>

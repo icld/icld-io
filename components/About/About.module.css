@@ -1,4 +1,17 @@
 .aboutMain {
-  position: absolute;
+  /* position: absolute; */
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
   width: 90vw;
+  max-width: 960px;
+  height: 80vh;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.803);
+}
+
+.aboutInner {
+  /* width: 100%; */
+  max-width: 960px;
 }

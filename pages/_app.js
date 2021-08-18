@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from '../styles/Home.module.css';
 import Header from '../components/Header/Header';
 import Image from 'next/image';
@@ -42,7 +43,7 @@ function MyApp({ Component, pageProps }) {
           alt='streets'
           quality={50}
           priority={true}
-          // loading='eager'
+          loading='eager'
           layout='fill'
           objectFit='cover'
           objectPosition='center'
