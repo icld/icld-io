@@ -30,6 +30,7 @@ export default function () {
       <Form.Group>
         <Form.Label>Your name</Form.Label>
         <Form.Control
+          required
           type='text'
           name='name'
           placeholder='What shall we call you?'
@@ -39,7 +40,13 @@ export default function () {
       </Form.Group>
       <Form.Group className='mb-3' controlId='email'>
         <Form.Label>Email address</Form.Label>
-        <Form.Control type='email' placeholder='Enter email' />
+        <Form.Control
+          required
+          type='email'
+          name='email'
+          controlId='email'
+          placeholder='Enter email'
+        />
         {/* <Form.Text className='text-muted'>
           I will only use this to write back to you
         </Form.Text> */}
@@ -47,7 +54,7 @@ export default function () {
       <Form.Group>
         <Form.Label>Your message:</Form.Label>
         <Form.Control
-          // required
+          required
           name='message'
           as='textarea'
           rows={5}
