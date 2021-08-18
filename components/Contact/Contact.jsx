@@ -5,7 +5,7 @@ import router, { useRouter } from 'next/router';
 // import styles from './About.module.css';
 import styles from '../../styles/Home.module.css';
 import contactStyles from './Contact.module.css';
-import Form from './Form';
+import Form from './Form/Form';
 import Socials from '../social/Socials';
 
 export default () => (
