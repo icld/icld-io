@@ -1,4 +1,3 @@
-import { stubFalse } from 'lodash';
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import styles from './Form.module.css';
@@ -25,13 +24,13 @@ export default function () {
       data-netlify='true'
       name='contact'
       action='/success'
-      // role='form'
+      role='form'
     >
       <Form.Group>
         <Form.Label>Your name</Form.Label>
         <Form.Control
           required
-          // role='form'
+          role='form'
           type='text'
           placeholder='What shall we call you?'
           controlId='nameField'
