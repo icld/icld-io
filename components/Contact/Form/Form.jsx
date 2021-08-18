@@ -18,8 +18,8 @@ export default function () {
   return (
     <Form
       // noValidate
-      validated={canSubmit}
-      onSubmit={handleSubmit}
+      // validated={canSubmit}
+      // onSubmit={handleSubmit}
       method='post'
       data-netlify='true'
       name='contact'
@@ -29,7 +29,7 @@ export default function () {
       <Form.Group>
         <Form.Label>Your name</Form.Label>
         <Form.Control
-          required
+          // required
           role='form'
           type='text'
           placeholder='What shall we call you?'
@@ -46,7 +46,12 @@ export default function () {
       </Form.Group>
       <Form.Group>
         <Form.Label>Your message:</Form.Label>
-        <Form.Control required as='textarea' rows={5} controlId='textField' />
+        <Form.Control
+          // required
+          as='textarea'
+          rows={5}
+          controlId='textField'
+        />
       </Form.Group>
 
       <Button variant='primary' type='submit' placeholder=''>
