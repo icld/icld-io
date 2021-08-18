@@ -18,10 +18,10 @@ export default function () {
 
   return (
     <Form
-      noValidate
+      // noValidate
       validated={canSubmit}
       onSubmit={handleSubmit}
-      method='POST'
+      method='post'
       data-netlify='true'
       name='contact'
       action='/success'
