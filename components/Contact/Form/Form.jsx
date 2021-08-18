@@ -17,9 +17,10 @@ export default function () {
 
   return (
     <Form
-      // noValidate
-      // validated={canSubmit}
-      // onSubmit={handleSubmit}
+      style={{ width: '75%' }}
+      noValidate
+      validated={canSubmit}
+      onSubmit={handleSubmit}
       name='contact'
       method='POST'
       data-netlify='true'
@@ -27,7 +28,7 @@ export default function () {
       role='form'
     >
       <input type='hidden' name='form-name' value='contact' />
-      <Form.Group>
+      <Form.Group className='mb-3'>
         <Form.Label>Your name</Form.Label>
         <Form.Control
           required
@@ -45,13 +46,13 @@ export default function () {
           type='email'
           name='email'
           controlId='email'
-          placeholder='Enter email'
+          placeholder='Enter an email'
         />
         {/* <Form.Text className='text-muted'>
           I will only use this to write back to you
         </Form.Text> */}
       </Form.Group>
-      <Form.Group>
+      <Form.Group className='mb-3'>
         <Form.Label>Your message:</Form.Label>
         <Form.Control
           required
@@ -62,7 +63,7 @@ export default function () {
         />
       </Form.Group>
 
-      <Button variant='primary' type='submit' placeholder=''>
+      <Button className='mb-3' variant='primary' type='submit' placeholder=''>
         Send it off!
       </Button>
     </Form>
