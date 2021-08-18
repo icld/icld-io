@@ -25,16 +25,20 @@ export default function () {
       data-netlify='true'
       name='contact'
       action='/success'
+      // role='form'
     >
       <Form.Group>
         <Form.Label>Your name</Form.Label>
         <Form.Control
           required
+          // role='form'
           type='text'
           placeholder='What shall we call you?'
+          controlId='nameField'
+          lg='4'
         />
       </Form.Group>
-      <Form.Group className='mb-3' controlId='formBasicEmail'>
+      <Form.Group role='form' className='mb-3' controlId='formBasicEmail'>
         <Form.Label>Email address</Form.Label>
         <Form.Control type='email' placeholder='Enter email' />
         {/* <Form.Text className='text-muted'>
@@ -43,7 +47,7 @@ export default function () {
       </Form.Group>
       <Form.Group>
         <Form.Label>Your message:</Form.Label>
-        <Form.Control required as='textarea' rows={5} />
+        <Form.Control required as='textarea' rows={5} controlId='textField' />
       </Form.Group>
 
       <Button variant='primary' type='submit' placeholder=''>
