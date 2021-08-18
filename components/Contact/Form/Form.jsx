@@ -24,18 +24,20 @@ export default function () {
       method='POST'
       data-netlify='true'
       action='/success'
+      role='form'
     >
       <input type='hidden' name='form-name' value='contact' />
       <Form.Group>
         <Form.Label>Your name</Form.Label>
         <Form.Control
           type='text'
+          name='name'
           placeholder='What shall we call you?'
-          controlId='nameField'
+          controlId='name'
           lg='4'
         />
       </Form.Group>
-      <Form.Group role='form' className='mb-3' controlId='formBasicEmail'>
+      <Form.Group className='mb-3' controlId='email'>
         <Form.Label>Email address</Form.Label>
         <Form.Control type='email' placeholder='Enter email' />
         {/* <Form.Text className='text-muted'>
@@ -46,9 +48,10 @@ export default function () {
         <Form.Label>Your message:</Form.Label>
         <Form.Control
           // required
+          name='message'
           as='textarea'
           rows={5}
-          controlId='textField'
+          controlId='message'
         />
       </Form.Group>
 
