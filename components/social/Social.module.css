@@ -21,8 +21,8 @@
 
 .socialIcons:hover {
   color: #f0426e;
-  width: 65px;
-  height: 65px;
+  width: 52px;
+  height: 52px;
 }
 
 .overlay {
@@ -45,7 +45,7 @@
   }
   .socialIcons:hover {
     color: #f0426e;
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
   }
 }

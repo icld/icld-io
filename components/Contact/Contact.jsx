@@ -5,17 +5,19 @@ import router, { useRouter } from 'next/router';
 // import styles from './About.module.css';
 import styles from '../../styles/Home.module.css';
 import contactStyles from './Contact.module.css';
-import Form from './Form/Form';
+import MyForm from './Form/Form';
 import Socials from '../social/Socials';
 
-export default () => (
+const Contact = () => (
   <>
     <main className={styles.container}>
       <div className={contactStyles.contactCard}>
         <h1 className={contactStyles.contactTitle}>Say Hello:</h1>
-        <Form />
+        <MyForm />
         <Socials />
       </div>
     </main>
   </>
 );
+
+export default Contact;

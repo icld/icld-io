@@ -10,7 +10,6 @@ import socialStyles from './Social.module.css';
 export default function () {
   return (
     <div className=''>
-      <div className={socialStyles.overlay} />
       <div className={socialStyles.mainSocials}>
         <GitHub />
         <Instagram />

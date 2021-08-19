@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import { Form, Button, Modal } from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './Form.module.css';
 import { useRouter } from 'next/router';
 
-export default function () {
+export default function MyForm() {
   const router = useRouter();
+
+  const [isName, setIsName] = useState(false);
+  const [isEmail, setIsEmail] = useState(false);
+  const [isMessage, setIsMessage] = useState(false);
 
   const [canSubmit, setCanSubmit] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -13,85 +18,79 @@ export default function () {
     const form = event.currentTarget;
     event.preventDefault();
     if (form.checkValidity() === false) {
-      setShowModal(false);
+      // setShowModal(false);
       event.preventDefault();
       event.stopPropagation();
-    } else {
-      setCanSubmit(true);
-      setShowModal(true);
     }
+    setCanSubmit(true);
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        width: '100%',
-        margin: 'auto 0',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      <Form
-        style={{ width: '75%' }}
-        // noValidate
-        validated={canSubmit}
-        onSubmit={handleSubmit}
+    <div className={styles.form}>
+      <form
+        className={styles.form}
         name='contact'
         method='POST'
-        data-netlify='true'
-        // action='success'
-        role='form'
+        netlify-data='true'
+        action='/success'
       >
         <input type='hidden' name='form-name' value='contact' />
-        <Form.Group className='mb-3'>
-          <Form.Label>Your name</Form.Label>
-          <Form.Control
-            required
+        <div className={styles.fields}>
+          <label hidden htmlFor='yourname'>
+            Your Name:
+          </label>{' '}
+          <br />
+          <input
+            className={styles.userName}
+            placeholder='what is your name?'
             type='text'
             name='name'
-            placeholder='What shall we call you?'
-            controlId='name'
-            lg='4'
+            id='name'
           />
-        </Form.Group>
-        <Form.Group className='mb-3' controlId='email'>
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            required
+          {/* <input type='text' name='name' id='yourname' /> */}
+        </div>
+        <div className={styles.fields}>
+          <label hidden htmlFor='youremail'>
+            Your Email:
+          </label>{' '}
+          <br />
+          <input
+            placeholder='what is your email?'
+            className={styles.email}
             type='email'
             name='email'
-            controlId='email'
-            placeholder='Enter an email'
+            id='youremail'
           />
-        </Form.Group>
-        <Form.Group className='mb-3'>
-          <Form.Label>Your message:</Form.Label>
-          <Form.Control
-            required
+        </div>
+        <div className={styles.fields}>
+          <label hidden htmlFor='yourmessage'>
+            Message:
+          </label>{' '}
+          <br />
+          <textarea
+            placeholder='what can I help you make?'
+            className={styles.message}
             name='message'
-            as='textarea'
-            rows={5}
-            controlId='message'
-            placeholder=''
-          />
-        </Form.Group>
+            id='yourmessage'
+          ></textarea>
+        </div>
+        <div className={styles.fields}>
+          <button className={styles.button} type='submit'>
+            Send it off!
+          </button>
+        </div>
+      </form>
 
-        <Button className='mb-3' variant='primary' type='submit' placeholder=''>
-          Send it off!
-        </Button>
-      </Form>
-
-      <Modal
+      {/* <Modal
         style={{ top: '30%' }}
         show={showModal}
-        onHide={() => router.push('/')}
+        onHide={() => setShowModal(false)}
       >
         <Modal.Header closeButton>
           <Modal.Title>Thanks for reaching out!</Modal.Title>
         </Modal.Header>
         <Modal.Body>I will get right back to you</Modal.Body>
-      </Modal>
+      </Modal> */}
     </div>
   );
 }

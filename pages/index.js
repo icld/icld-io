@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,8 +8,14 @@ import Modal from 'react-modal';
 Modal.setAppElement('#__next');
 
 export default function Home() {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  // const [display ]
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setAnimate(true);
+    }, 1000);
+  });
+
   return (
     <>
       <Head>
@@ -25,28 +31,58 @@ export default function Home() {
         >
           <h1 className={styles.title}>
             <span className={styles.titleA}>
-              Hello. My name is{' '}
-              <div style={{ display: 'inline-block', color: '#f0426e' }}>
+              <div className={!animate ? styles.hello : styles.helloActive}>
+                Hello! My name is{' '}
+              </div>
+              <div
+                className={!animate ? styles.ian : styles.ianActive}
+                style={{
+                  // marginTop: '',
+                  display: 'inline-block',
+                }}
+              >
                 {' '}
                 Ian Lyles
               </div>
-              . <br />I am a web developer.
-              <br />
-              Welcome to <span className={styles.titleName}>icld.io</span>
+              <br />{' '}
+              <div
+                className={!animate ? styles.webDev : styles.webDevActive}
+                style={{
+                  marginTop: '12px',
+                }}
+              >
+                I am a web developer
+              </div>
+              <div
+                className={!animate ? styles.welcome : styles.welcomeActive}
+                style={{
+                  marginTop: '12px',
+                }}
+              >
+                Welcome to <span className={styles.titleName}>icld.io</span>
+              </div>
             </span>
             <span className={styles.titleB}>
-              <Link href='/projects'>
+              <Link className={styles.goalLink} href='/projects'>
                 <a>View some of my work</a>
               </Link>
             </span>
           </h1>
 
-          <p className={styles.description}>
+          <p
+            className={`${styles.description} ${
+              animate ? styles.activeDescription : ''
+            }`}
+          >
             I am a Portland-based freelance coder with a background in design
             and project management. I am excited to work with you on your next
             extraordinary project.
             <br />
-            <Link href='/contact' style={{ position: 'inline-block' }}>
+            <Link
+              href='/contact'
+              className={styles.goalLink}
+              style={{ position: 'inline-block' }}
+            >
               <a> What would you like to build?</a>
             </Link>
           </p>
