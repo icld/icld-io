@@ -138,7 +138,7 @@ const navItems = [
   { name: 'about', toHref: '/about' },
   { name: 'lx', toHref: 'https://www.icldesign.com' },
   { name: 'contact', toHref: '/contact' },
-  { name: 'blog', toHref: '/blog' },
+  // { name: 'blog', toHref: '/blog' },
 ];
 
 const spanItems = [
