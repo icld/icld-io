@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import Modal from 'react-modal';
+import Socials from '../components/social/Socials';
 
 Modal.setAppElement('#__next');
 
@@ -32,7 +33,7 @@ export default function Home() {
           <h1 className={styles.title}>
             <span className={styles.titleA}>
               <div className={!animate ? styles.hello : styles.helloActive}>
-                Hello! My name is{' '}
+                My name is
               </div>
               <div
                 className={!animate ? styles.ian : styles.ianActive}
@@ -74,10 +75,6 @@ export default function Home() {
               animate ? styles.activeDescription : ''
             }`}
           >
-            I am a Portland-based freelance coder with a background in design
-            and project management. I am excited to work with you on your next
-            extraordinary project.
-            <br />
             <Link
               href='/contact'
               className={styles.goalLink}
@@ -88,15 +85,6 @@ export default function Home() {
           </p>
         </card>
       </main>
-      {/* <Modal
-        isOpen={modalIsOpen}
-        className={styles.Modal}
-        overlayClassName={styles.Overlay}
-        onRequestClose={() => setModalIsOpen(false)}
-        shouldCloseOnOverlayClick={true}
-      >
-        I'm a modal
-      </Modal> */}
     </>
   );
 }

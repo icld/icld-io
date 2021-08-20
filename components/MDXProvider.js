@@ -5,6 +5,4 @@ const mdComponents = {
   h1: (props) => <h1 style={{ color: 'white' }} {...props} />,
 };
 
-export default ({ children }) => (
-  <MDXProvider components={mdComponents}>{children}</MDXProvider>
-);
+export default ({ children }) => <MDXProvider>{children}</MDXProvider>;

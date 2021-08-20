@@ -9,7 +9,7 @@ export default () => {
   return (
     <>
       <Layouter>
-        <Abt />;
+        <Abt />
       </Layouter>
     </>
   );
